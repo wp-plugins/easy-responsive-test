@@ -15,3 +15,4 @@
         <h3 class="ertp_check_site"><a href="<?php echo get_permalink($this->erp_page_id);?>" target="_blank">Check Your Site<?php ?></h3>
     </form>
 </div>
+

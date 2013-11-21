@@ -59,6 +59,7 @@ class easyResponsiveTestPlugin {
             wp_enqueue_script('jquery');
             wp_enqueue_style('wp-color-picker');
             wp_enqueue_script('wp-color-picker');
+            wp_enqueue_style('erp_admin', ERTP_ASSETS_URL.'css/erp_admin.css');
             wp_enqueue_script('erp_admin', ERTP_ASSETS_URL.$this->erpjs_path);
         }
     }
@@ -123,8 +124,11 @@ class easyResponsiveTestPlugin {
 
         global $pagenow;
 
-        if( 'edit.php' == $pagenow && ( get_query_var('post_type') && 'page' == get_query_var('post_type') ) )
+        if( 'edit.php' == $pagenow && ( $query->get('post_type') && 'page' == $query->get('post_type') ) )
+        {
             $query->set( 'post__not_in', array($this->erp_page_id) );
+        }
+
 
         return $query;
     }
