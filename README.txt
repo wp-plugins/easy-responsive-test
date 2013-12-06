@@ -18,8 +18,9 @@ Easy Responsive Test Plugin enables you to check your site responsiveness in you
 
 * You can easily test your site on different screen sizes
 * Already have some common window sizes
-* You Can add any custom screen size as per you requirements using settings page.
-* You Can set custom colors for toolbar.
+* You can add any custom screen size as per you requirements using settings page.
+* You can set custom height and width.
+* You can set custom colors for toolbar.
 
 
 You don't need to re-size browser window every time to test your site.
@@ -46,8 +47,20 @@ It's that simple ... just what the name suggests
 == Screenshots ==
 
 1. Easy Responsive Test Settings Page
+2. Toolbar
+3. 1280x1024 Size
+4. 1024x600 Size
+5. 600x960 Size
+6. 960x540 Size
+7. 480x600 Size
+
 
 == Changelog ==
+
+= 2.0 =
+
+*[update] You can set height and width.
+*[update] You can show/hide Toolbar.
 
 = 1.0 =
 

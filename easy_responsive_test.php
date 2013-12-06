@@ -3,16 +3,16 @@
   Plugin Name: Easy Responsive Test
   Plugin URI: http://www.oscitasthemes.com
   Description: Check Responsive Site.
-  Version: 1.0
+  Version: 2.0
   Author: oscitas
   Author URI: http://www.oscitasthemes.com
   License: Under the GPL v2 or later
  */
-define('ERTP_VERSION', '1.0');
+define('ERTP_VERSION', '2.0');
 define('ERTP_BASE_URL', plugins_url('',__FILE__));
 define('ERTP_ASSETS_URL', ERTP_BASE_URL . '/assets/');
 define('ERTP_BASE_DIR_LONG', dirname(__FILE__));
-define('ERTP_SIZES','320, 480, 540, 600, 768, 960, 1024, 1280');
+define('ERTP_SIZES','320:480, 480:600, 540:960, 600:960, 1024:600, 1280:1024');
 define('ERTP_BG','#444444');
 define('ERTP_FG','#ffffff');
 class easyResponsiveTestPlugin {
@@ -24,6 +24,7 @@ class easyResponsiveTestPlugin {
     private $erp_fg;
     private $erp_page_id;
     function __construct(){
+        session_start();
         $pluginmenu=explode('/',plugin_basename(__FILE__));
         $this->plugin_name=$pluginmenu[0];
         $this->erpjs_path='js/erp_admin.js';
@@ -38,7 +39,6 @@ class easyResponsiveTestPlugin {
         add_filter('page_template', array($this, 'ERTP_sitedemo_page_template'));
         add_action( 'pre_get_posts' , array($this, 'ERTP_exclude_this_page') );
     }
-
 
     public function ERTP_activate_plugin(){
         update_option( 'erp_sizes', $this->erp_sizes);
@@ -116,7 +116,6 @@ class easyResponsiveTestPlugin {
             $new_page['ID']=$page_check->ID;
             wp_insert_post($new_page);
         }
-
     }
     public function ERTP_exclude_this_page( $query ) {
         if( !is_admin() )
@@ -134,8 +133,12 @@ class easyResponsiveTestPlugin {
     }
     function ERTP_sitedemo_page_template($page_template) {
 
+
         if (is_page($this->erp_page)) {
+//            $_SESSION['ert']=1;
             $page_template = dirname(__FILE__) . '/lib/erp_template.php';
+        }else{
+//            $_SESSION['ert']=0;
         }
 
         return $page_template;

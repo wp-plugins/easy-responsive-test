@@ -1,3 +1,9 @@
+html{
+    height: 100%;
+}
+body{
+    height: 95%;
+}
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 body { margin: 0; font-size: 1em; line-height: 1; }
@@ -27,12 +33,26 @@ body {
     text-rendering:optimizeLegibility;
     color:#444;
 }
+#resizer{
+    height:100%;
+    border:5px solid #444
+}
+div.viewports{
+    position:fixed;top:0;left:0;right:0;overflow:hidden;z-index:9999;
+    box-shadow:0 0 3px #222;
+}
+ul.viewlist{
+    position: relative;
+}
+ul.viewlist li{
+    display:inline-block;cursor:pointer;font-size:12px;line-height:12px;text-align:center;
+border-right:1px solid #555;padding:13px 3px;min-width:6%;
+}
+ul.viewlist li > ul.ert_dropdown {
+display: none;
+}
+ul.viewlist li.ert_custom_menu {
+    padding: 6px 0 0;
+    float: right;
+}
 
-
-	
-	
-	
-	
-	
-	
-	
