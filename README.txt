@@ -22,6 +22,7 @@ Easy Responsive Test Plugin enables you to check your site responsiveness in you
 * You can set custom height and width.
 * You can set custom colors for toolbar.
 
+http://www.youtube.com/watch?v=Kgx47PKVk00
 
 You don't need to re-size browser window every time to test your site.
 Just Install ERT and test your site's  responsiveness
